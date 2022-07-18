@@ -1,5 +1,5 @@
 -- Bump this if you need newer packages
-index-state: 2022-01-26T14:47:51Z
+index-state:2022-02-18T00:00:00Z
 
 packages: .
 
@@ -11,18 +11,18 @@ benchmarks: False
 
 source-repository-package
   type: git
-  location: https://github.com/Quid2/flat.git
+  location: https://github.com/input-output-hk/flat
   tag: ee59880f47ab835dbd73bea0847dab7869fc20d8
 
 source-repository-package
   type: git
-  location: https://github.com/input-output-hk/cardano-crypto.git
+  location: https://github.com/input-output-hk/cardano-crypto
   tag: f73079303f663e028288f9f4a9e08bcca39a923e
 
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-base
-  tag: 0b1b5b37e305c4bb10791f843bc8c81686a0cba4
+  tag: 0f3a867493059e650cda69e20a5cbf1ace289a57
   subdir:
     base-deriving-via
     binary
@@ -38,7 +38,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-prelude
-  tag: fd773f7a58412131512b9f694ab95653ac430852
+  tag: bb4ed71ba8e587f672d06edf9d2e376f4b055555
   subdir:
     cardano-prelude
     cardano-prelude-test
@@ -46,7 +46,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/ouroboros-network
-  tag: d2d219a86cda42787325bb8c20539a75c2667132
+  tag: a65c29b6a85e90d430c7f58d362b7eb097fd4949
   subdir:
     monoidal-synchronisation
     network-mux
@@ -58,18 +58,11 @@ source-repository-package
     ouroboros-network
     ouroboros-network-framework
     ouroboros-network-testing
-    typed-protocols
-    typed-protocols-cborg
-    typed-protocols-examples
-    strict-stm
-    io-sim
-    io-classes
-    ntp-client
 
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/iohk-monitoring-framework
-  tag: 46f994e216a1f8b36fe4669b47b2a7011b0e153c
+  tag: 066f7002aac5a0efc20e49643fea45454f226caa
   subdir:
     iohk-monitoring
     tracer-transformers
@@ -83,8 +76,9 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-ledger
-  tag: b765575f51d6eaf3af296bede89a6bafd4d8e93c
+  tag: ce3057e0863304ccb3f79d78c77136219dc786c6
   subdir:
+    eras/babbage/impl
     eras/alonzo/impl
     eras/byron/chain/executable-spec
     eras/byron/crypto
@@ -99,7 +93,7 @@ source-repository-package
     libs/cardano-ledger-pretty
     libs/cardano-protocol-tpraos
     libs/cardano-data
-    libs/compact-map
+    libs/vector-map
     libs/set-algebra
     libs/small-steps
     libs/small-steps-test
@@ -108,7 +102,7 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/cardano-node.git
-  tag: ede4cb10f371ae30c816f265a5a365afc299cb2c
+  tag: 9f1d7dc163ee66410d912e48509d6a2300cfa68a
   subdir:
     cardano-api
 
@@ -125,8 +119,8 @@ source-repository-package
 source-repository-package
   type: git
   location: https://github.com/input-output-hk/plutus
-  tag: ed1614303025ee8dcd9586bb9c821500b02fd13e
-  subdir:  
+  tag: f680ac6979e069fcc013e4389ee607ff5fa6672f
+  subdir:
    plutus-core
    plutus-ledger-api
    word-array
@@ -135,8 +129,49 @@ source-repository-package
    plutus-tx
    plutus-tx-plugin
 
-package eventful-sql-common
-  ghc-options: -XDerivingStrategies -XStandaloneDeriving -XUndecidableInstances -XDataKinds -XFlexibleInstances
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/optparse-applicative
+  tag: 7497a29cb998721a9068d5725d49461f2bba0e7a
+
+source-repository-package
+  type: git
+  location: https://github.com/vshabanov/ekg-json
+  tag: 00ebe7211c981686e65730b7144fbf5350462608
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/hedgehog-extras
+  tag: 967d79533c21e33387d0227a5f6cc185203fe658
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/io-sim
+  tag: f4183f274d88d0ad15817c7052df3a6a8b40e6dc
+  subdir:
+    io-classes
+    io-sim
+    strict-stm
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/typed-protocols
+  tag: 181601bc3d9e9d21a671ce01e0b481348b3ca104
+  subdir:
+    typed-protocols
+    typed-protocols-cborg
+    typed-protocols-examples
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/flat
+  tag: ee59880f47ab835dbd73bea0847dab7869fc20d8
+
+
+source-repository-package
+  type: git
+  location: https://github.com/denisshevchenko/threepenny-gui
+  tag: 4ec92ded05ccf59ba4a874be4b404ac1b6d666b6
 
 allow-newer:
   *:aeson,
