@@ -1,0 +1,152 @@
+-- Bump this if you need newer packages
+index-state: 2022-01-26T14:47:51Z
+
+packages: .
+
+-- You never, ever, want this.
+write-ghc-environment-files: never
+
+tests: False
+benchmarks: False
+
+source-repository-package
+  type: git
+  location: https://github.com/Quid2/flat.git
+  tag: ee59880f47ab835dbd73bea0847dab7869fc20d8
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/cardano-crypto.git
+  tag: f73079303f663e028288f9f4a9e08bcca39a923e
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/cardano-base
+  tag: 0b1b5b37e305c4bb10791f843bc8c81686a0cba4
+  subdir:
+    base-deriving-via
+    binary
+    binary/test
+    cardano-crypto-class
+    cardano-crypto-praos
+    cardano-crypto-tests
+    measures
+    orphans-deriving-via
+    slotting
+    strict-containers
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/cardano-prelude
+  tag: fd773f7a58412131512b9f694ab95653ac430852
+  subdir:
+    cardano-prelude
+    cardano-prelude-test
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/ouroboros-network
+  tag: d2d219a86cda42787325bb8c20539a75c2667132
+  subdir:
+    monoidal-synchronisation
+    network-mux
+    ouroboros-consensus
+    ouroboros-consensus-byron
+    ouroboros-consensus-cardano
+    ouroboros-consensus-protocol
+    ouroboros-consensus-shelley
+    ouroboros-network
+    ouroboros-network-framework
+    ouroboros-network-testing
+    typed-protocols
+    typed-protocols-cborg
+    typed-protocols-examples
+    strict-stm
+    io-sim
+    io-classes
+    ntp-client
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/iohk-monitoring-framework
+  tag: 46f994e216a1f8b36fe4669b47b2a7011b0e153c
+  subdir:
+    iohk-monitoring
+    tracer-transformers
+    contra-tracer
+    plugins/backend-aggregation
+    plugins/backend-ekg
+    plugins/backend-monitoring
+    plugins/backend-trace-forwarder
+    plugins/scribe-systemd
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/cardano-ledger
+  tag: b765575f51d6eaf3af296bede89a6bafd4d8e93c
+  subdir:
+    eras/alonzo/impl
+    eras/byron/chain/executable-spec
+    eras/byron/crypto
+    eras/byron/crypto/test
+    eras/byron/ledger/executable-spec
+    eras/byron/ledger/impl
+    eras/byron/ledger/impl/test
+    eras/shelley/impl
+    eras/shelley/test-suite
+    eras/shelley-ma/impl
+    libs/cardano-ledger-core
+    libs/cardano-ledger-pretty
+    libs/cardano-protocol-tpraos
+    libs/cardano-data
+    libs/compact-map
+    libs/set-algebra
+    libs/small-steps
+    libs/small-steps-test
+    libs/non-integral
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/cardano-node.git
+  tag: ede4cb10f371ae30c816f265a5a365afc299cb2c
+  subdir:
+    cardano-api
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/Win32-network
+  tag: 3825d3abf75f83f406c1f7161883c438dac7277d
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/goblins
+  tag: cde90a2b27f79187ca8310b6549331e59595e7ba
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/plutus
+  tag: ed1614303025ee8dcd9586bb9c821500b02fd13e
+  subdir:  
+   plutus-core
+   plutus-ledger-api
+   word-array
+   prettyprinter-configurable
+   stubs/plutus-ghc-stub
+   plutus-tx
+   plutus-tx-plugin
+
+package eventful-sql-common
+  ghc-options: -XDerivingStrategies -XStandaloneDeriving -XUndecidableInstances -XDataKinds -XFlexibleInstances
+
+allow-newer:
+  *:aeson,
+  monoidal-containers:aeson,
+  size-based:template-haskell
+
+constraints:
+    hedgehog >= 1.0
+  , bimap >= 0.4.0
+  , libsystemd-journal >= 1.4.4
+  , systemd >= 2.3.0
+  , network >= 3.1.1.0
+  , HSOpenSSL >= 0.11.7.2

@@ -1,0 +1,51 @@
+cabal-version:      2.4
+name:               contract-address
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+license: Apache-2.0
+
+author:             Nabin (htps://github.com/nabin6246)
+maintainer:         Nabin
+
+-- A copyright notice.
+-- copyright:
+-- category:
+-- extra-source-files: CHANGELOG.md
+
+library plutus-example
+  exposed-modules:
+    Plutus.Contracts.V1.Simple
+  hs-source-dirs: plutus
+  build-depends:
+      base  -any
+    , plutus-tx
+    , plutus-ledger-api
+    , plutus-tx-plugin
+
+executable  print-address
+  main-is:  Main.hs
+  hs-source-dirs: test
+  build-depends:
+      base -any
+    , aeson
+    , bytestring
+    , serialise
+    , http-types
+    , text 
+    , text-conversions
+    , cardano-api
+    , cardano-ledger-shelley
+    , cardano-ledger-core
+    , cardano-ledger-shelley-ma
+    , cardano-ledger-alonzo
+    , plutus-ledger-api
+    , plutus-example
